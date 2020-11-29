@@ -7,6 +7,7 @@ import Context from "./context";
 import { CompareByRegistr, CompareByRating } from "./CompareFunctions";
 
 function Users() {
+  const [curPage, setPage] = React.useState(0);
   const [users, setUsers] = React.useState([]);
   const [search, setSearch] = React.useState("");
   const [regSort, setRegSort] = React.useState("");
@@ -65,6 +66,8 @@ function Users() {
   return (
     <Context.Provider
       value={{
+        curPage,
+        setPage,
         ratingSort,
         setRatingSort,
         regSort,

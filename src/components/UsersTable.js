@@ -1,7 +1,11 @@
+import React, { useContext } from "react";
 import UserItem from "./UserItem";
 import "./UsersTable.css";
+import Context from "../context";
 
-export default function UsersTable({users}) {
+export default function UsersTable({ users }) {
+  const { curPage, setPage } = useContext(Context);
+
   return (
     <div className="users__table-container">
       <table className="users__table">
@@ -15,11 +19,27 @@ export default function UsersTable({users}) {
           </tr>
         </thead>
         <tbody>
-          {users.map((user) => (
+          {users.slice(curPage, curPage + 5).map((user) => (
             <UserItem user={user} key={user.id} />
           ))}
         </tbody>
       </table>
+      <div className="users__table-pagenav">
+        <button
+          className="users__table-btn__pagenav"
+          disabled={curPage === 0}
+          onClick={() => setPage(curPage - 5)}
+        >
+          Назад
+        </button>
+        <button
+          className="users__table-btn__pagenav"
+          disabled={users.length <= curPage + 5}
+          onClick={() => setPage(curPage + 5)}
+        >
+          Вперёд
+        </button>
+      </div>
     </div>
   );
 }

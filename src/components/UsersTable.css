@@ -1,6 +1,6 @@
 .users__table-container {
   width: 100%;
-  padding: 0 1rem;
+  padding: 0 1rem 1rem 1rem;
 
   border-radius: 6px;
   background-color: white;
@@ -9,7 +9,7 @@
 
 .users__table {
   width: 100%;
-  margin: 1.3rem auto;
+  margin: 1.3rem auto 0.5rem;
 
   border-collapse: collapse;
 
@@ -30,4 +30,22 @@
 
 .users__table tbody tr:last-child {
   border-bottom: none;
+}
+
+.users__table-pagenav {
+  display: flex;
+  justify-content: space-between;
+
+  width: 95%;
+  margin: 0 auto;
+}
+
+.users__table-btn__pagenav {
+  padding: 0.5rem;
+
+  background-color: rgb(234, 234, 234);
+  border-radius: 10px;
+  border-color: rgb(130, 130, 130, 0.2);
+  outline: none;
+  cursor: pointer;
 }
