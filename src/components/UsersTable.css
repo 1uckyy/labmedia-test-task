@@ -1,0 +1,33 @@
+.users__table-container {
+  width: 100%;
+  padding: 0 1rem;
+
+  border-radius: 6px;
+  background-color: white;
+  box-shadow: 0 27px 42px -42px rgba(0,0,0,0.8);
+}
+
+.users__table {
+  width: 100%;
+  margin: 1.3rem auto;
+
+  border-collapse: collapse;
+
+  text-align: left;
+}
+
+.users__table thead tr th {
+  color: rgb(130, 130, 130);
+  font-size: 0.9rem;
+  font-weight: 400;
+}
+
+.users__table tr {
+  height: 4rem;
+
+  border-bottom: 2px solid rgb(130, 130, 130, 0.2);
+}
+
+.users__table tbody tr:last-child {
+  border-bottom: none;
+}
