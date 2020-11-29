@@ -1,7 +1,7 @@
 import UserItem from "./UserItem";
 import "./UsersTable.css";
 
-export default function UsersTable(props) {
+export default function UsersTable({users}) {
   return (
     <div className="users__table-container">
       <table className="users__table">
@@ -15,7 +15,7 @@ export default function UsersTable(props) {
           </tr>
         </thead>
         <tbody>
-          {props.users.map((user) => (
+          {users.map((user) => (
             <UserItem user={user} key={user.id} />
           ))}
         </tbody>
