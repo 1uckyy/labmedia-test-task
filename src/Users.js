@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import UsersSearch from "./components/UsersSearch";
 import UsersSort from "./components/UsersSort";
 import UsersTable from "./components/UsersTable";
+import Loader from "./components/Tools/Loader";
 import "./Users.css";
 import Context from "./context";
 import { CompareByRegistr, CompareByRating } from "./CompareFunctions";
@@ -12,12 +13,14 @@ function Users() {
   const [search, setSearch] = React.useState("");
   const [regSort, setRegSort] = React.useState("");
   const [ratingSort, setRatingSort] = React.useState("");
+  const [loading, setLoading] = React.useState(true);
 
   useEffect(() => {
     fetch("https://5ebbb8e5f2cfeb001697d05c.mockapi.io/users")
       .then((response) => response.json())
       .then((users) => {
         setUsers(users);
+        setLoading(false);
       });
   }, []);
 
@@ -86,7 +89,12 @@ function Users() {
         <h1 className="users__title">Список пользователей</h1>
         <UsersSearch />
         <UsersSort />
-        <UsersTable users={sortByRating(sortByRegistr(calcFilterUsers()))} />
+        {loading && <Loader />}
+        {users.length ? (
+          <UsersTable users={sortByRating(sortByRegistr(calcFilterUsers()))} />
+        ) : loading ? null : (
+          <h3 className="users__empty">Нет пользователей</h3>
+        )}
       </div>
     </Context.Provider>
   );
