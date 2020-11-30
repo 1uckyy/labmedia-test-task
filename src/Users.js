@@ -22,6 +22,7 @@ function Users() {
   }, []);
 
   function searchUser(searchText) {
+    if (searchText !== "") setPage(0);
     setSearch(searchText);
   }
 
