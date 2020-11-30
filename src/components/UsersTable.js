@@ -5,9 +5,6 @@ import Context from "../context";
 
 export default function UsersTable({ users }) {
   const { curPage, setPage } = useContext(Context);
-  
-  //when last page will clear
-  if (users.length === curPage) setPage(curPage - 5);
 
   return (
     <div className="users__table-container">

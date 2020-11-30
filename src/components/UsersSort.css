@@ -4,16 +4,3 @@
 
   color: rgb(130, 130, 130);
 }
-
-.users__sort-item {
-  margin-left: 0.7rem;
-
-  border-bottom: 1px dashed;
-  cursor: pointer;
-
-  font-size: 0.9rem;
-}
-
-.users__sort-item--active {
-  color: black;
-}

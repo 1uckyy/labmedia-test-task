@@ -49,23 +49,12 @@ function Users() {
     setUsers(users.filter((note) => note.id !== id));
   }
 
-  function sortByRegistr(filteredUsers) {
-    switch (regSort) {
+  function sortFunc(filteredUsers, sortBy, compareBy) {
+    switch (sortBy) {
       case "asc":
-        return [...filteredUsers].sort(CompareByRegistr);
+        return [...filteredUsers].sort(compareBy);
       case "desc":
-        return [...filteredUsers].sort(CompareByRegistr).reverse();
-      default:
-        return filteredUsers;
-    }
-  }
-
-  function sortByRating(filteredUsers) {
-    switch (ratingSort) {
-      case "asc":
-        return [...filteredUsers].sort(CompareByRating);
-      case "desc":
-        return [...filteredUsers].sort(CompareByRating).reverse();
+        return [...filteredUsers].sort(compareBy).reverse();
       default:
         return filteredUsers;
     }
@@ -91,7 +80,7 @@ function Users() {
         <UsersSort />
         {loading && <Loader />}
         {users.length ? (
-          <UsersTable users={sortByRating(sortByRegistr(calcFilterUsers()))} />
+          <UsersTable users={sortFunc(sortFunc(calcFilterUsers(), regSort, CompareByRegistr), ratingSort, CompareByRating)} />
         ) : loading ? null : (
           <h3 className="users__empty">Нет пользователей</h3>
         )}
