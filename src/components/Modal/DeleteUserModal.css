@@ -1,7 +1,5 @@
 .modal {
-  display: flex;
-  justify-content: center;
-  padding-top: 5rem;
+  padding: 5rem;
 
   background: rgba(0, 0, 0, 0.5);
 
@@ -14,12 +12,16 @@
 }
 
 .modal-body {
-  height: fit-content;
+  width: 40%;
   padding: 1.6rem;
-  margin: 0 2rem;
+  margin: 0 auto;
   
   border-radius: 5px;
   background: #fff;
+}
+
+.modal-body__title {
+  text-align: center;
 }
 
 .users__table-btn__delete {

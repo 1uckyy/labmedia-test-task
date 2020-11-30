@@ -25,7 +25,7 @@
 .users__table tr {
   height: 4rem;
 
-  border-bottom: 2px solid rgb(130, 130, 130, 0.2);
+  border-bottom: 2px solid rgba(130, 130, 130, 0.2);
 }
 
 .users__table tbody tr:last-child {

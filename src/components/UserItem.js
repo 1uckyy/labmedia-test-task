@@ -15,7 +15,7 @@ export default function UserItem({ user }) {
       </td>
       <td>{user.rating}</td>
       <td>
-        <DeleteUserModal user_id={user.id} />
+        <DeleteUserModal userId={user.id} />
       </td>
     </tr>
   );

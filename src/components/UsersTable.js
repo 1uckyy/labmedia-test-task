@@ -19,9 +19,8 @@ export default function UsersTable({ users }) {
           </tr>
         </thead>
         <tbody>
-          {users.slice(curPage, curPage + 5).map((user) => (
-            <UserItem user={user} key={user.id} />
-          ))}
+          {users.slice(curPage, curPage + 5).map((user) => 
+            <UserItem user={user} key={user.id} />)}
         </tbody>
       </table>
       <div className="users__table-pagenav">

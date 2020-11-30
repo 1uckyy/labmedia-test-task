@@ -2,12 +2,12 @@ import React, { useContext } from "react";
 import "./DeleteUserModal.css";
 import Context from "../../context";
 
-export default function DeleteUserModal({ user_id }) {
+export default function DeleteUserModal({ userId }) {
   const { removeUser } = useContext(Context);
   const [isOpen, setModal] = React.useState(false);
 
   return (
-    <>
+    <div>
       <button
         className="users__table-btn__delete"
         onClick={() => setModal(true)}
@@ -15,15 +15,15 @@ export default function DeleteUserModal({ user_id }) {
         &times;
       </button>
 
-      {isOpen && (
+      {isOpen && 
         <div className="modal">
           <div className="modal-body">
-            <h2>Вы уверены, что хотите удалить пользователя?</h2>
+            <h2 className="modal-body__title">Вы уверены, что хотите удалить пользователя?</h2>
             <div className="modal-btns__container">
               <button
                 className="modal-btn"
                 onClick={() => {
-                  removeUser(user_id);
+                  removeUser(userId);
                   setModal(false);
                 }}
               >
@@ -35,7 +35,7 @@ export default function DeleteUserModal({ user_id }) {
             </div>
           </div>
         </div>
-      )}
-    </>
+      }
+    </div>
   );
 }
