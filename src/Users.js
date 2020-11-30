@@ -41,6 +41,10 @@ function Users() {
       : users;
   }
 
+  function removeUser(id) {
+    setUsers(users.filter((note) => note.id !== id));
+  }
+
   function sortByRegistr(filteredUsers) {
     switch (regSort) {
       case "asc":
@@ -74,6 +78,7 @@ function Users() {
         setRegSort,
         search,
         searchUser,
+        removeUser,
       }}
     >
       <div className="users">

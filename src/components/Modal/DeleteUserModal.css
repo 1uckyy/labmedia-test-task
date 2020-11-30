@@ -1,0 +1,50 @@
+.modal {
+  display: flex;
+  justify-content: center;
+  padding-top: 5rem;
+
+  background: rgba(0, 0, 0, 0.5);
+
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 10000;
+}
+
+.modal-body {
+  height: fit-content;
+  padding: 1.6rem;
+  margin: 0 2rem;
+  
+  border-radius: 5px;
+  background: #fff;
+}
+
+.users__table-btn__delete {
+  background: none;
+  border: none;
+  cursor: pointer;
+  outline: none;
+
+  font-size: 2rem;
+}
+
+.modal-btns__container {
+  display: flex;
+  justify-content: space-between;
+  margin: 1.5rem auto 0;
+  width: 7.6rem;
+}
+
+.modal-btn {
+  width: 3.3rem;
+  padding: 0.5rem;
+
+  background-color: rgb(234, 234, 234);
+  border-radius: 10px;
+  border-color: rgb(130, 130, 130, 0.2);
+  outline: none;
+  cursor: pointer;
+}

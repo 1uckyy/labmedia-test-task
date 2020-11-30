@@ -1,4 +1,5 @@
 import "./UserItem.css";
+import DeleteUserModal from "./Modal/DeleteUserModal";
 
 export default function UserItem({ user }) {
   return (
@@ -14,7 +15,7 @@ export default function UserItem({ user }) {
       </td>
       <td>{user.rating}</td>
       <td>
-        <button className="users__table-btn__delete">&times;</button>
+        <DeleteUserModal user_id={user.id} />
       </td>
     </tr>
   );
