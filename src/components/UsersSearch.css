@@ -41,7 +41,7 @@
 .users__search-btn__clean {
   position: relative;
   margin-top: 2rem;
-  margin-left: 0.9rem;
+  padding-left: 1.25rem;
 
   border: 0;
   background: none;
@@ -53,6 +53,6 @@
   width: .9rem;
 
   position: absolute;
-  left: -13px;
+  left: 0;
   z-index: 1;
 }
