@@ -24,6 +24,9 @@ function Users() {
       });
   }, []);
 
+  //when last page will clear
+  if (users.length === curPage && curPage !== 0) setPage(curPage - 5);
+
   function searchUser(searchText) {
     if (searchText !== "") setPage(0);
     setSearch(searchText);
@@ -80,7 +83,13 @@ function Users() {
         <UsersSort />
         {loading && <Loader />}
         {users.length ? (
-          <UsersTable users={sortFunc(sortFunc(calcFilterUsers(), regSort, CompareByRegistr), ratingSort, CompareByRating)} />
+          <UsersTable
+            users={sortFunc(
+              sortFunc(calcFilterUsers(), regSort, CompareByRegistr),
+              ratingSort,
+              CompareByRating
+            )}
+          />
         ) : loading ? null : (
           <h3 className="users__empty">Нет пользователей</h3>
         )}
